@@ -13,7 +13,7 @@ export const findFranchiseeByID = (id) => {
   return `${first_name} ${last_name}`;
 };
 
-export const getFranchiseFee = (total) => Number(Math.round(total * 0.1));
+export const getFranchiseFee = (total) => parseFloat(total * 0.1).toFixed(2);
 
 export const columns = [
   {
