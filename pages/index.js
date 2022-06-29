@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "../styles/Home.module.css";
 import moment from "moment";
 import { DEFAULT_DATE_FORMAT } from "../utils/datetime";
 import { sales as data } from "../data/sales";
 import Filters from "../components/Filters";
 import SalesInfo from "../components/SalesInfo";
 import Table from "../components/Table";
+import styles from "../styles/Home.module.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 var date = new Date();
@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Filters
-        sales={salesByDate}
+        sales={data}
         setSales={setSales}
         selectedDate={selectedDate}
         setSelectedDate={setSelectedDate}

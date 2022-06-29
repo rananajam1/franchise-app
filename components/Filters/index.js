@@ -42,12 +42,14 @@ export default function Filters({
       />
       <p>Franchisee</p>
       <Select
+        isClearable
         value={selectedFranchisee}
         onChange={(franchisee) => setSelectedFranchisee(franchisee)}
         options={franchiseeDdo}
       />
       <p>Location</p>
       <Select
+        isClearable
         value={selectedLocation}
         onChange={(location) => setSelectedLocation(location)}
         options={locationDdo}
