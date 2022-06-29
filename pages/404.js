@@ -8,5 +8,5 @@ export default function ErrorPage() {
     router.replace("/");
   }, [router]);
 
-  return <div>Page not found. Redirecting to '/'</div>;
+  return <div>Page not found. Redirecting to &apos/&apos</div>;
 }
