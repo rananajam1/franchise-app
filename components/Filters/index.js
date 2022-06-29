@@ -15,6 +15,7 @@ export default function Filters({
 
   React.useEffect(() => {
     applyFilters(sales);
+    // eslint-disable-next-line
   }, [selectedFranchisee, selectedLocation]);
 
   const applyFilters = React.useCallback(
