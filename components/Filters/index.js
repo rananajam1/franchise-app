@@ -35,7 +35,7 @@ export default function Filters({
 
       setSales(filteredSales);
     },
-    [selectedFranchisee, selectedLocation]
+    [selectedFranchisee, selectedLocation, setSales]
   );
 
   return (
