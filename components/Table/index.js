@@ -1,9 +1,14 @@
 import React from "react";
 import DataTable from "react-data-table-component";
-import { columns, findFranchiseeByID, findLocationByID, getFranchiseFee } from "../../utils/helpers";
+import {
+  columns,
+  findFranchiseeByID,
+  findLocationByID,
+  getFranchiseFee,
+} from "../../utils/helpers";
 
-export default function Table({ sales }) {
-  const salesData = sales?.map(
+export default function Table({ sales = [] }) {
+  const salesData = sales.map(
     ({ _id, franchisee_id, location_id, date, subtotal, tax, total }) => ({
       _id,
       franchisee: findFranchiseeByID(franchisee_id),

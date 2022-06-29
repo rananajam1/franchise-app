@@ -1,7 +1,7 @@
 import React from "react";
 import { getFranchiseFee } from "../../utils/helpers";
 
-export default function SalesInfo({ sales }) {
+export default function SalesInfo({ sales = [] }) {
   const totalSales = sales
     .reduce((partialSum, { total }) => partialSum + total, 0)
     .toFixed(2);

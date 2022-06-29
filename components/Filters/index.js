@@ -14,24 +14,29 @@ export default function Filters({
   const [selectedLocation, setSelectedLocation] = React.useState(null);
 
   React.useEffect(() => {
-    setSales(getFilteredData(sales));
+    applyFilters(sales);
   }, [selectedFranchisee, selectedLocation]);
 
-  const getFilteredData = (array) => {
-    let filtered = array;
+  const applyFilters = React.useCallback(
+    (array) => {
+      let filteredSales = array;
 
-    if (!!selectedFranchisee?.value) {
-      filtered = _.filter(filtered, {
-        franchisee_id: selectedFranchisee?.value,
-      });
-    }
+      if (!!selectedFranchisee?.value) {
+        filteredSales = _.filter(filteredSales, {
+          franchisee_id: selectedFranchisee?.value,
+        });
+      }
 
-    if (!!selectedLocation?.value) {
-      filtered = _.filter(filtered, { location_id: selectedLocation?.value });
-    }
+      if (!!selectedLocation?.value) {
+        filteredSales = _.filter(filteredSales, {
+          location_id: selectedLocation?.value,
+        });
+      }
 
-    return filtered;
-  };
+      setSales(filteredSales);
+    },
+    [selectedFranchisee, selectedLocation]
+  );
 
   return (
     <div>
