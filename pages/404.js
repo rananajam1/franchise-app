@@ -6,7 +6,7 @@ export default function ErrorPage() {
 
   React.useEffect(() => {
     router.replace("/");
-  }, []);
+  }, [router]);
 
   return <div>Page not found. Redirecting to '/'</div>;
 }
