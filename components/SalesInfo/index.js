@@ -6,10 +6,12 @@ export default function SalesInfo({ sales }) {
     .reduce((partialSum, { total }) => partialSum + total, 0)
     .toFixed(2);
 
-  const totalFee = sales.reduce(
-    (partialSum, { total }) => partialSum + Number(getFranchiseFee(total)),
-    0
-  );
+  const totalFee = sales
+    .reduce(
+      (partialSum, { total }) => partialSum + Number(getFranchiseFee(total)),
+      0
+    )
+    .toFixed(2);
   return (
     <div>
       <h3>Total Sales: {totalSales}</h3>
